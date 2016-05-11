@@ -42,4 +42,11 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def sortbyDate
+    @movies=  Movie.all.order("release_date DESC")
+  end
+  def sortbyTitle
+    @movies=  Movie.all.order("title ASC")
+  end
+
 end
